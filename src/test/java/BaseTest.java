@@ -23,7 +23,6 @@ public class BaseTest {
     @BeforeMethod
     @Parameters({"BaseURL"})
     public void launchBrowser(String BaseURL) {
-        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
