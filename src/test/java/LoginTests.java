@@ -20,7 +20,7 @@ public class LoginTests extends BaseTest {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        String url = "https://bbb.testpro.io/";
+        String url = "https://qa.koel.app/";
         driver.get(url);
 
         // Steps
@@ -38,7 +38,7 @@ public class LoginTests extends BaseTest {
         submit.click();
 
         // Expected Result
-        Assert.assertEquals(driver.getCurrentUrl(), url); //https://bbb.testpro.io/
+        Assert.assertEquals(driver.getCurrentUrl(), url); //https://qa.koel.app/
 
         // Post-condition
         driver.quit();
@@ -54,13 +54,13 @@ public class LoginTests extends BaseTest {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        String url = "https://bbb.testpro.io/";
+        String url = "https://qa.koel.app/";
         driver.get(url);
 
         WebElement emailField = driver.findElement(By.cssSelector("input[type='email']"));
         emailField.click();//not needed
         emailField.clear();
-        emailField.sendKeys("demo@elliott.nance@testpro.io.com");
+        emailField.sendKeys("elliott.nance@testpro.io");
 
         WebElement passwordField = driver.findElement(By.cssSelector("input[type='password']"));
         passwordField.click();//not needed
@@ -88,7 +88,7 @@ public class LoginTests extends BaseTest {
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        String url = "https://bbb.testpro.io/";
+        String url = "https://qa.koel.app/";
         driver.get(url);
 
         WebElement emailField = driver.findElement(By.cssSelector("input[type='email']"));
@@ -104,7 +104,7 @@ public class LoginTests extends BaseTest {
         WebElement submit = driver.findElement(By.cssSelector("button[type='submit']"));
         submit.click();
 
-        Assert.assertEquals(driver.getCurrentUrl(), url); //https://bbb.testpro.io/
+        Assert.assertEquals(driver.getCurrentUrl(), url); //https://qa.koel.app/
 
         driver.quit();
     }

@@ -1,4 +1,4 @@
-package Pages;
+package PageFactory;
 
 public class ProfilePage {
 }
