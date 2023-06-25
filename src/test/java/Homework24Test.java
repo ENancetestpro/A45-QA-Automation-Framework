@@ -3,11 +3,14 @@ import PageFactory.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Homework23 extends BaseTest {
+import java.util.Random;
+
+public class Homework24Test extends BaseTest {
 
     @Test
     public void renamePlaylist() {
-        String playlistName = "PlayMusic";
+        Random random = new Random();
+        String playlistName = random.toString();
 
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);

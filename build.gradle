@@ -15,8 +15,21 @@ dependencies {
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.3.1'
 }
 
-test { useTestNG() { suites "src/test/resources/TestNG.xml" } }
+test {
+    useTestNG() {
+        suites "src/test/resources/TestNG.xml"
+        systemProperty "browser", System.getProperty("browser")
+    }
+}
 
-task testSmoke(type: Test) { useTestNG() { suites "src/test/resources/smokeSuite.xml" } }
+task testSmoke(type: Test) {
+    useTestNG() {
+        suites "src/test/resources/smokeSuite.xml"
+    }
+}
 
-task testRegression(type: Test) { useTestNG() { suites "src/test/resources/smokeSuite.xml" } }
+task testRegression(type: Test) {
+    useTestNG() {
+        suites "src/test/resources/smokeSuite.xml"
+    }
+}
