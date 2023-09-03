@@ -10,9 +10,10 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.perfeccionista.framework:pagefactory-api:0.2.0-Beta'
     testImplementation 'org.testng:testng:7.6.1'
     implementation 'org.seleniumhq.selenium:selenium-java:4.5.0'
-    testImplementation 'io.github.bonigarcia:webdrivermanager:5.3.1'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.4.1'
 }
 
 test {

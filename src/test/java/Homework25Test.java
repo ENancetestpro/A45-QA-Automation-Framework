@@ -2,18 +2,17 @@ import PageFactory.HomePage;
 import PageFactory.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.Random;
 
-public class Homework24Test extends BaseTest {
+public class Homework25Test extends BaseTest {
 
     @Test
     public void renamePlaylist() {
         Random random = new Random();
         String playlistName = random.toString();
 
-        LoginPage loginPage = new LoginPage(driver);
-        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
 
         loginPage.login();
         homePage.doubleClickPlaylist();
