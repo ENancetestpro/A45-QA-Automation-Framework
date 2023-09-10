@@ -4,7 +4,7 @@
     <test name="LoginTests" preserve-order="false">
         <parameter name="BaseURL" value="https://qa.koel.app/"/>
         <classes>
-            <class name="Homework25Test"/>
+            <class name="Homework26Test"/>
             <class name="BaseTest"/>
         </classes>
     </test>
