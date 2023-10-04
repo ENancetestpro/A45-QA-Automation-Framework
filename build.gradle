@@ -24,11 +24,7 @@ test {
     useTestNG() {
         suites "src/test/resources/TestNG.xml"
         systemProperty "browser", System.getProperty("browser")
-//        // Use system properties if provided, otherwise, use defaults
-//        def suiteName = project.findProperty("suite") ?: "DefaultSuite"
-//        def browserName = project.findProperty("browser") ?: "chrome"
-//        suites "src/test/resources/${suiteName}.xml"
-//        systemProperty "browser", browserName
+
     }
 }
 
