@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG" parallel="methods" thread-count="2">
+
+    <test name="Example Test" preserve-order="false">
+        <parameter name="BaseURL" value="https://qa.koel.app/"/>
+        <classes>
+<!--&lt;!&ndash;            <class name="Homework25Test">&ndash;&gt;-->
+<!--&lt;!&ndash;                <methods>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="renamePlaylist" />&ndash;&gt;-->
+<!--&lt;!&ndash;                </methods>&ndash;&gt;-->
+<!--&lt;!&ndash;            </class>&ndash;&gt;-->
+                        <class name="LoginTests">
+                            <methods>
+                                <include name="loginValidEmailPasswordTest" />
+                            </methods>
+                        </class>
+        </classes>
+    </test>
+</suite>
