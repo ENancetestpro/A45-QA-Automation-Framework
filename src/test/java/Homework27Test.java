@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.Random;
 
-public class Homework26Test extends BaseTest {
+public class Homework27Test extends BaseTest {
 
     @Test
     public void renamePlaylist() {

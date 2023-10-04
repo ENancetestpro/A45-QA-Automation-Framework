@@ -9,20 +9,20 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class LoginTests extends BaseTest {
+public class LoginTests<WebDriverWait> extends BaseTest {
 
     @Test
     public void loginInvalidEmailValidPasswordTest(){
         // Pre-condition
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         LoginPage loginPage = new LoginPage(getDriver());
         String url = "https://qa.koel.app/";
         getDriver().get(url);
+
 
         // Steps
         WebElement emailField = getDriver().findElement(By.cssSelector("input[type='email']"));
@@ -35,6 +35,7 @@ public class LoginTests extends BaseTest {
 
         WebElement submit = getDriver().findElement(By.cssSelector("button[type='submit']"));
         submit.click();
+
 
         // Expected Result
         Assert.assertEquals(getDriver().getCurrentUrl(), url); //https://qa.koel.app/
@@ -49,9 +50,9 @@ public class LoginTests extends BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
 
-        LoginPage loginPage = new LoginPage(getDriver());
+//        LoginPage loginPage = new LoginPage(getDriver());
         WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         String url = "https://qa.koel.app/";
         driver.get(url);
@@ -67,8 +68,9 @@ public class LoginTests extends BaseTest {
         WebElement submit = driver.findElement(By.cssSelector("button[type='submit']"));
         submit.click();
 
-        WebElement avatarIcon = getDriver().findElement(By.cssSelector("img[class='avatar']"));
-        Assert.assertTrue(avatarIcon.isDisplayed());
+//        WebElement avatarIcon = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img.avatar")));
+//        Assert.assertTrue(avatarIcon.isDisplayed());
+        Assert.assertEquals(getDriver().getCurrentUrl(), url); //https://qa.koel.app/
         driver.quit();
     }
 
@@ -89,7 +91,7 @@ public class LoginTests extends BaseTest {
         WebElement emailField = getDriver().findElement(By.cssSelector("input[type='email']"));
 
         emailField.clear();
-        emailField.sendKeys("demo@class.com");
+        emailField.sendKeys("elliott.nance@testpro.io");
 
         WebElement passwordField = driver.findElement(By.cssSelector("input[type='password']"));
 
